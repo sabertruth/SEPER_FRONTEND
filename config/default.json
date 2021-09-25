@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+    "mongodb+srv://bss5188:Metro3310@merndb.24c1p.mongodb.net/MERNDB?retryWrites=true&w=majority"
+  }
