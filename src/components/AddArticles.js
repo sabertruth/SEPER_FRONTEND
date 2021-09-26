@@ -132,6 +132,7 @@ class AddArticles extends Component {
                 <input
                     type="submit"
                     className="btn btn-outline-warning btn-block mt-4"
+                    alert ="You have submited"
                 />
               </form>
           </div>
