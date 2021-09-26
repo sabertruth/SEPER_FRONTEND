@@ -93,6 +93,16 @@ class Articles extends React.Component {
               <h1 className="display-4 text-center">All Articles</h1>
               <p className="lead text-center">
                   List of All Available Articles In The Databse
+                  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort By
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Title</a>
+    <a class="dropdown-item" href="#">Author</a>
+    <a class="dropdown-item" href="#">Year</a>
+  </div>
+</div>
               </p>
               <hr /> <br />
             </div>
