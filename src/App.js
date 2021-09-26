@@ -54,10 +54,10 @@ const App = () =>  {
         <Router>
         <div class="container">
          
-          <h1> 👉Heroku Test👈<hr></hr></h1>
+          <h1> 👉SEPER👈<hr></hr></h1>
           
             <ul className="header">
-            <li ><NavLink exact to = "" >Home</NavLink></li>
+            <h1 ><NavLink exact to = "" >Home</NavLink></h1>
 
 
             </ul>

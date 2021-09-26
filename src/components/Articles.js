@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 //import '../App.css';
 import axios from 'axios';
 
-class Articles extends Component {
+class Articles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
