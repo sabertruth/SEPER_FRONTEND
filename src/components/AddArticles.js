@@ -34,7 +34,7 @@ class AddArticles extends Component {
     };
 
     axios
-      .post('https://seper-backend.herokuapp.com/api/create-books', data)
+      .post('https://seper-backend.herokuapp.com/api/books', data)
       .then(res => {
         this.setState({
           title: '',
