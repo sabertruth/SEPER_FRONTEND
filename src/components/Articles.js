@@ -14,7 +14,7 @@ class Articles extends React.Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('https://seper-aut-team10.herokuapp.com/Articles'+this.props.match.params.id)
+      .get('https://seper-backend.herokuapp.com/api/books'+this.props.match.params.id)
       .then(res => {
         // console.log("Print-showBookDetails-API-response: " + res.data);
         this.setState({
@@ -28,7 +28,7 @@ class Articles extends React.Component {
 
   onDeleteClick (id) {
     axios
-      .delete('https://seper-aut-team10.herokuapp.com/Articles'+id)
+      .delete('https://seper-backend.herokuapp.com/api/books'+id)
       .then(res => {
         this.props.history.push("/");
       })
