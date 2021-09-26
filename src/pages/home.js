@@ -15,7 +15,7 @@ class Home extends Component {
           <br></br>
          <br></br>
          <br></br>
-          <button onClick={() => {this.props.history.replace('/create-book')}} type="button" class="btn btn-info">Add New Article</button>
+          <button onClick={() => {this.props.history.replace('/AddArticles')}} type="button" class="btn btn-info">Add New Article</button>
          <br></br>
          <br></br>
          <br></br>
