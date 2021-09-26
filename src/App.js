@@ -54,7 +54,7 @@ const App = () =>  {
         <Router>
         <div class="container">
          
-          <h1> 👉SEPER👈<hr></hr></h1>
+          <h1> 👉Heroku Test👈<hr></hr></h1>
           
             <ul className="header">
             <li ><NavLink exact to = "" >Home</NavLink></li>
