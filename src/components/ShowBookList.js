@@ -14,7 +14,7 @@ class ShowBookList extends Component {
 
   componentDidMount() {
     axios
-      .get('https://seper-backend.herokuapp.com/api/books')
+      .get('http://localhost:8082/api/books')
       .then(res => {
         this.setState({
           books: res.data
@@ -49,7 +49,7 @@ class ShowBookList extends Component {
             </div>
 
             <div className="col-md-11">
-              <Link to="/AddArticles" className="btn btn-outline-warning float-right">
+              <Link to="/create-book" className="btn btn-outline-warning float-right">
                 + Add New Book
               </Link>
               <br />
