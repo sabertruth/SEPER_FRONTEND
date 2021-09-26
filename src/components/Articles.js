@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
-import React  from 'react'; 
-=======
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-import React from 'react';
->>>>>>> Stashed changes
-// import { Link } from 'react-router-dom';
-//import '../App.css';
+import React  from 'react'; 
 import axios from 'axios';
 
 class Articles extends React.Component {
