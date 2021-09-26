@@ -1,5 +1,5 @@
-import axios from "axios";
-import React, { Component } from "react";
+import axios from 'axios';
+import React from 'react';
 
 const Home = (props) => {
   const [search, setSearch] = React.useState();
@@ -18,7 +18,7 @@ const Home = (props) => {
   }, [search]);
 
   const renderBooks = () => {
-    if (showSearch == false) return;
+    if (showSearch === false) return;
 
     return (
       <table className="">
@@ -35,19 +35,17 @@ const Home = (props) => {
         </thead>
 
         <tbody>
-          {books.map((book) => {
-            return (
-              <tr>
-                <td>{book.title}</td>
-                <td>{book.author}</td>
-                <td>{book.source}</td>
-                <td>{book.description}</td>
-                <td>{book.claim}</td>
-                <td>{book.evidence}</td>
-                <td>{book.sepractice}</td>
-              </tr>
-            );
-          })}
+          {books.map((book) => (
+            <tr>
+              <td>{book.title}</td>
+              <td>{book.author}</td>
+              <td>{book.source}</td>
+              <td>{book.description}</td>
+              <td>{book.claim}</td>
+              <td>{book.evidence}</td>
+              <td>{book.sepractice}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     );
@@ -56,7 +54,7 @@ const Home = (props) => {
   return (
     <div>
       <input
-        class="form-control me-sm-2"
+        className="form-control me-sm-2"
         type="text"
         value={search}
         onChange={(s) => setSearch(s.target.value)}
@@ -64,35 +62,35 @@ const Home = (props) => {
       />
 
       <button
-        class="btn btn-warning my-2 my-sm-0"
+        className="btn btn-warning my-2 my-sm-0"
         onClick={() => setShowSearch(true)}
-        style={{float: 'right'}}
+        style={{ float: 'right' }}
       >
         Search
       </button>
       {renderBooks()}
 
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
       <button
         onClick={() => {
-          props.history.replace("/create-book");
+          props.history.replace('/create-book');
         }}
         type="button"
-        class="btn btn-info"
+        className="btn btn-info"
       >
         Add New Article
       </button>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
       <button
         onClick={() => {
-          props.history.replace("/Articles");
+          props.history.replace('/Articles');
         }}
         type="button"
-        class="btn btn-danger"
+        className="btn btn-danger"
       >
         Show All Available Articles
       </button>
