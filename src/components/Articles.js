@@ -7,18 +7,21 @@ class Articles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      book: {}
+      books: []
     };
   }
 
   componentDidMount() {
+    const params = this.props.match.params.id
+    const url = !!params ? 'http://localhost:8082/api/books/'+this.props.match.params.id : 'http://localhost:8082/api/books/';
+
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:8082/api/books/'+this.props.match.params.id)
+      .get(url)
       .then(res => {
-        // console.log("Print-showBookDetails-API-response: " + res.data);
+        console.log("Print-showBookDetails-API-response: " ,res.data);
         this.setState({
-          book: res.data
+          books: res.data
         })
       })
       .catch(err => {
@@ -37,47 +40,23 @@ class Articles extends React.Component {
       })
   };
 
-
-
-
   render() {
 
-    // Garry's Changes From Here
-    const book = this.state.book;
-    let BookItem = <div>
-      <table className="table table-hover table-dark">
-        <thead>
+    const renderBookItem = () => {
+      return this.state.books.map((book)=>{
+
+        return (
           <tr> 
-            <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Source</th>
-            <th scope="col">Y.O.P</th>
-            <th scope="col">DOI</th>
-            <th scope="col">Claimed Benifits</th>
-          </tr>
-        </thead>
-        
-        <tbody>
-         
-           <tr>
-            
-            <td>{ book.title }</td>
-            <td>{ book.isbn }</td>
-            <td>{ book.source }</td>
-            <td>{ book.publisher }</td>
-            <td>{ book.published_date }</td>
-            <td>{ book.description }</td>
-         </tr>
-          
-        </tbody>
-      </table>
-    </div>
-// Ends Here
-
-
-
-
+          <td>{ book.title }</td>
+          <td>{ book.author }</td>
+          <td>{ book.source }</td>
+          <td>{ book.yop }</td>
+          <td>{ book.doi }</td>
+          <td>{ book.description }</td>
+       </tr>
+        )
+      })
+    }
     return (
       <div className="Articles">
         <div className="container">
@@ -93,22 +72,29 @@ class Articles extends React.Component {
               <h1 className="display-4 text-center">All Articles</h1>
               <p className="lead text-center">
                   List of All Available Articles In The Databse
-                  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sort By
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Title</a>
-    <a class="dropdown-item" href="#">Author</a>
-    <a class="dropdown-item" href="#">Year</a>
-  </div>
-</div>
               </p>
               <hr /> <br />
             </div>
           </div>
           <div>
-            { BookItem }
+            <table className="table table-hover table-dark">
+        <thead>
+          <tr> 
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Source</th>
+            <th scope="col">Y.O.P</th>
+            <th scope="col">DOI</th>
+            <th scope="col">Description</th>
+            {/* <th scope="col">Claimed Benifits</th> */}
+          </tr>
+        </thead>
+        
+        <tbody>
+
+              {renderBookItem()}
+        </tbody>
+      </table>
      
       </div>
   </div>

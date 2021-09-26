@@ -67,7 +67,7 @@ const App = () =>  {
           <Route path='/create-book' component={AddArticles} />
           
           
-            <Redirect to="/home" />
+            {/* <Redirect to="/home" /> */}
           </div>
         </div>
         </Router>

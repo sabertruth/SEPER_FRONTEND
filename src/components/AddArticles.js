@@ -9,11 +9,12 @@ class AddArticles extends Component {
     super();
     this.state = {
       title: '',
-      isbn:'',
       author:'',
+      source:'',
+      yop:'',
+      doi:'',
       description:'',
-      published_date:'',
-      publisher:''
+      isSubmitted: false
     };
   }
 
@@ -23,14 +24,15 @@ class AddArticles extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    console.log('XXX: onSubmit')
 
     const data = {
       title: this.state.title,
-      isbn: this.state.isbn,
       author: this.state.author,
-      description: this.state.description,
-      published_date: this.state.published_date,
-      publisher: this.state.publisher
+      source: this.state.source,
+      yop: this.state.yop,
+      doi: this.state.doi,
+      description: this.state.description
     };
 
     axios
@@ -38,13 +40,14 @@ class AddArticles extends Component {
       .then(res => {
         this.setState({
           title: '',
-          isbn:'',
           author:'',
-          description:'',
-          published_date:'',
-          publisher:''
+          source:'',
+          yop:'',
+          doi:'',
+          description:''
         })
-        this.props.history.push('/');
+        this.setState({isSubmitted: true})
+        // this.props.history.push('/');
       })
       .catch(err => {
         console.log("Error in AddArticles!");
@@ -78,17 +81,6 @@ class AddArticles extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Source'
-                    name='isbn'
-                    className='form-control'
-                    value={this.state.isbn}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className='form-group'>
-                  <input
-                    type='text'
                     placeholder='Author'
                     name='author'
                     className='form-control'
@@ -100,31 +92,44 @@ class AddArticles extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Publication Year'
-                    name='description'
+                    placeholder='Source'
+                    name='source'
                     className='form-control'
-                    value={this.state.description}
+                    value={this.state.source}
                     onChange={this.onChange}
                   />
                 </div>
 
-                {/* <div className='form-group'>
+                <div className='form-group'>
                   <input
-                    type='date'
-                    placeholder='published_date'
-                    name='published_date'
+                    type='text'
+                    placeholder='Publication Year'
+                    name='yop'
                     className='form-control'
-                    value={this.state.published_date}
+                    value={this.state.yop}
                     onChange={this.onChange}
                   />
-                </div> */}
+                </div>
+
+               
                 <div className='form-group'>
                   <input
                     type='text'
                     placeholder='DOI'
-                    name='publisher'
+                    name='doi'
                     className='form-control'
-                    value={this.state.publisher}
+                    value={this.state.doi}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                 <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Description'
+                    name='description'
+                    className='form-control'
+                    value={this.state.description}
                     onChange={this.onChange}
                   />
                 </div>
@@ -135,6 +140,8 @@ class AddArticles extends Component {
                 />
               </form>
           </div>
+          {/* TODO: msg after submitting */}
+          {this.state.isSubmitted && 'Your Article has been submitted successfully.'}
           </div>
         </div>
       </div>
