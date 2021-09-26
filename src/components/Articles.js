@@ -43,7 +43,8 @@ class Articles extends React.Component {
   render() {
 
     const renderBookItem = () => {
-      return this.state.books.map((book) => {
+      // added the sort method here by author----------------------
+      return this.state.books.sort((a, b) => a.author > b.author ? 1 : -1).map((book) => {
 
         return (
           <tr>
@@ -72,15 +73,23 @@ class Articles extends React.Component {
               <h1 className="display-4 text-center">All Articles</h1>
               <p className="lead text-center">
                 List of All Available Articles In The Databse
+                {/* ---------------dropdown implemented ---------------- */}
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Sort By
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Title</a>
-                    <a class="dropdown-item" href="#">Author</a>
-                    <a class="dropdown-item" href="#">Year</a>
+                    <a class="dropdown-item" value="title" href="#">Title</a>
+                    <a class="dropdown-item" value="author" href="#">Author</a>
+                    <a class="dropdown-item" value="year" href="#">Year</a>
                   </div>
+                  <select name="selectList" id="selectList">
+                    <option value="option 1">Author</option>
+                    <option value="option 2">Title</option>
+                    <option value="option 2">Year</option>
+                  </select>
+
                 </div>
               </p>
               <hr /> <br />
@@ -93,7 +102,7 @@ class Articles extends React.Component {
                   <th scope="col">Title</th>
                   <th scope="col">Author</th>
                   <th scope="col">Source</th>
-                  <th scope="col">Y.O.P</th>
+                  <th scope="col">Year Published</th>
                   <th scope="col">DOI</th>
                   <th scope="col">Description</th>
                   {/* <th scope="col">Claimed Benifits</th> */}
