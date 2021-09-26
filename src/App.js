@@ -54,7 +54,7 @@ const App = () =>  {
         <Router>
         <div class="container">
          
-          <h1> 👉SEPER👈<hr></hr></h1>
+          <h1 align="center"> 👉SEPER👈<hr></hr></h1>
           
             <ul className="header">
             <h1 ><NavLink exact to = "" >Home</NavLink></h1>

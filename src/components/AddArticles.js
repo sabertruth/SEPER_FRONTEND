@@ -9,11 +9,14 @@ class AddArticles extends Component {
     super();
     this.state = {
       title: '',
-      author:'',
-      source:'',
-      yop:'',
-      doi:'',
-      description:'',
+      author: '',
+      source: '',
+      yop: '',
+      doi: '',
+      description: '',
+      claim: '',
+      evidence: '',
+      sepractice: '',
       isSubmitted: false
     };
   }
@@ -32,7 +35,10 @@ class AddArticles extends Component {
       source: this.state.source,
       yop: this.state.yop,
       doi: this.state.doi,
-      description: this.state.description
+      description: this.state.description,
+      claim: this.state.claim,
+      evidence: this.state.description,
+      sepractice: this.state.description,
     };
 
     axios
@@ -40,13 +46,16 @@ class AddArticles extends Component {
       .then(res => {
         this.setState({
           title: '',
-          author:'',
-          source:'',
-          yop:'',
-          doi:'',
-          description:''
+          author: '',
+          source: '',
+          yop: '',
+          doi: '',
+          description: '',
+          claim: '',
+          evidence: '',
+          sepractice: '',
         })
-        this.setState({isSubmitted: true})
+        this.setState({ isSubmitted: true })
         // this.props.history.push('/');
       })
       .catch(err => {
@@ -59,11 +68,11 @@ class AddArticles extends Component {
       <div className="AddArticles">
         <div className="container">
           <div className="row">
-           
+
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Add Articles</h1>
               <p className="lead text-center">
-                  Add Required Information About The Artcile
+                Add Required Information About The Artcile
               </p>
 
               <form noValidate onSubmit={this.onSubmit}>
@@ -111,7 +120,7 @@ class AddArticles extends Component {
                   />
                 </div>
 
-               
+
                 <div className='form-group'>
                   <input
                     type='text'
@@ -123,7 +132,7 @@ class AddArticles extends Component {
                   />
                 </div>
 
-                 <div className='form-group'>
+                <div className='form-group'>
                   <input
                     type='text'
                     placeholder='Description'
@@ -134,14 +143,47 @@ class AddArticles extends Component {
                   />
                 </div>
 
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Claim'
+                    name='claim'
+                    className='form-control'
+                    value={this.state.claim}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Evidence'
+                    name='evidence'
+                    className='form-control'
+                    value={this.state.evidence}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='SE Practice'
+                    name='sepractice'
+                    className='form-control'
+                    value={this.state.sepractice}
+                    onChange={this.onChange}
+                  />
+                </div>
+
                 <input
-                    type="submit"
-                    className="btn btn-outline-warning btn-block mt-4"
+                  type="submit"
+                  className="btn btn-outline-warning btn-block mt-4"
                 />
               </form>
-          </div>
-          {/* TODO: msg after submitting */}
-          {this.state.isSubmitted && 'Your Article has been submitted successfully.'}
+            </div>
+            {/* TODO: msg after submitting */}
+            {this.state.isSubmitted && 'Your Article has been submitted successfully.'}
           </div>
         </div>
       </div>

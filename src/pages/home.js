@@ -60,6 +60,7 @@ const Home = (props) => {
       <button
         class="btn btn-warning my-2 my-sm-0"
         onClick={() => setShowSearch(true)}
+        style={{float: 'right'}}
       >
         Search
       </button>

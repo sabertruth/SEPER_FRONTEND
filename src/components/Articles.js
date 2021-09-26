@@ -54,6 +54,9 @@ class Articles extends React.Component {
             <td>{book.yop}</td>
             <td>{book.doi}</td>
             <td>{book.description}</td>
+            <td>{book.claim}</td>
+            <td>{book.evidence}</td>
+            <td>{book.sepractice}</td>
           </tr>
         )
       })
@@ -77,12 +80,12 @@ class Articles extends React.Component {
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort By
+                    Select SE Practice
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" value="title" href="#">Title</a>
-                    <a class="dropdown-item" value="author" href="#">Author</a>
-                    <a class="dropdown-item" value="year" href="#">Year</a>
+                    <a class="dropdown-item" value="title" href="#">TDD</a>
+                    <a class="dropdown-item" value="author" href="#">Extreme Programming</a>
+                    <a class="dropdown-item" value="year" href="#">Mob Programming</a>
                   </div>
                   <select name="selectList" id="selectList">
                     <option value="option 1">Author</option>
@@ -105,7 +108,9 @@ class Articles extends React.Component {
                   <th scope="col">Year Published</th>
                   <th scope="col">DOI</th>
                   <th scope="col">Description</th>
-                  {/* <th scope="col">Claimed Benifits</th> */}
+                  <th scope="col">Claim</th>
+                  <th scope="col">Evidence Level</th>
+                  <th scope="col">SE Practice</th>
                 </tr>
               </thead>
 
