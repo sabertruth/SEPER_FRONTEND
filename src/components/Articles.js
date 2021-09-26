@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 import React  from 'react'; 
+=======
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
+import React from 'react';
+>>>>>>> Stashed changes
 // import { Link } from 'react-router-dom';
 //import '../App.css';
 import axios from 'axios';
@@ -13,7 +19,7 @@ class Articles extends React.Component {
 
   componentDidMount() {
     const params = this.props.match.params.id
-    const url = !!params ? 'http://localhost:8082/api/books/' + this.props.match.params.id : 'http://localhost:8082/api/books/';
+    const url = params ? 'http://localhost:8082/api/books/' + this.props.match.params.id : 'http://localhost:8082/api/books/';
 
     // console.log("Print id: " + this.props.match.params.id);
     axios
@@ -24,21 +30,21 @@ class Articles extends React.Component {
           books: res.data
         })
       })
-      .catch(err => {
+      .catch(() => {
         console.log("Error from Articles");
       })
-  };
+  }
 
   onDeleteClick(id) {
     axios
       .delete('http://localhost:8082/api/books/' + id)
-      .then(res => {
+      .then(() => {
         this.props.history.push("/");
       })
-      .catch(err => {
+      .catch(() => {
         console.log("Error form Articles_deleteClick");
       })
-  };
+  }
 
   render() {
 
@@ -77,15 +83,15 @@ class Articles extends React.Component {
               <p className="lead text-center">
                 List of All Available Articles In The Databse
                 {/* ---------------dropdown implemented ---------------- */}
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                <div className="dropdown">
+                  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Select SE Practice
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" value="title" href="#">TDD</a>
-                    <a class="dropdown-item" value="author" href="#">Extreme Programming</a>
-                    <a class="dropdown-item" value="year" href="#">Mob Programming</a>
+                  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a className="dropdown-item" value="title" href="#">TDD</a>
+                    <a className="dropdown-item" value="author" href="#">Extreme Programming</a>
+                    <a className="dropdown-item" value="year" href="#">Mob Programming</a>
                   </div>
                   <select name="selectList" id="selectList">
                     <option value="option 1">Author</option>
