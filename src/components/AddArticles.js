@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
@@ -43,7 +43,7 @@ class AddArticles extends Component {
 
     axios
       .post('http://localhost:8082/api/books', data)
-      .then(res => {
+      // .then(res => {
         this.setState({
           title: '',
           author: '',
@@ -57,10 +57,9 @@ class AddArticles extends Component {
         })
         this.setState({ isSubmitted: true })
         // this.props.history.push('/');
-      })
-      .catch(err => {
-        console.log("Error in AddArticles!");
-      })
+      // })
+      
+     
   };
 
   render() {
