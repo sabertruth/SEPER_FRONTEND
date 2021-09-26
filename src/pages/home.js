@@ -28,6 +28,9 @@ const Home = (props) => {
             <th scope="col">Author</th>
             <th scope="col">Source</th>
             <th scope="col">Description</th>
+            <th scope="col">Claimed</th>
+            <th scope="col">Evidence</th>
+            <th scope="col">Se Practice</th>
           </tr>
         </thead>
 
@@ -39,6 +42,9 @@ const Home = (props) => {
                 <td>{book.author}</td>
                 <td>{book.source}</td>
                 <td>{book.description}</td>
+                <td>{book.claim}</td>
+                <td>{book.evidence}</td>
+                <td>{book.sepractice}</td>
               </tr>
             );
           })}
