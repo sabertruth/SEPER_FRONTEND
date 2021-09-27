@@ -20,10 +20,10 @@ class ShowBookList extends Component {
           books: res.data
         })
       })
-      .catch(err =>{
+      .catch(() =>{
         console.log('Error from ShowBookList');
       })
-  };
+  }
 
 
   render() {
