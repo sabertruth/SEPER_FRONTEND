@@ -1,8 +1,9 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://seper-aut-team10.herokuapp.com/)
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Click button below to open app
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://seper-aut-team10.herokuapp.com/)
 
 ## Available Scripts
 
