@@ -62,14 +62,12 @@ class Articles extends React.Component {
       })
     }
     return (
-      <div className="Articles">
-        <div className="container">
+    
+        <div className="border">
           <div className="row">
             <div className="col-md-10 m-auto">
               <br /> <br />
-              {/* <Link to="/" className="btn btn-outline-warning float-left">
-                  Show Book List
-              </Link> */}
+           
             </div>
             <br />
             <div className="col-md-8 m-auto">
@@ -87,11 +85,13 @@ class Articles extends React.Component {
                     <a className="dropdown-item" value="author" href="#">Extreme Programming</a>
                     <a className="dropdown-item" value="year" href="#">Mob Programming</a>
                   </div>
+                  <div className="nav-link dropdown">
                   <select name="selectList" id="selectList">
                     <option value="option 1">Author</option>
                     <option value="option 2">Title</option>
                     <option value="option 2">Year</option>
                   </select>
+                  </div>
 
                 </div>
               </p>
@@ -122,7 +122,7 @@ class Articles extends React.Component {
 
           </div>
         </div>
-      </div>
+     
     );
   }
 }

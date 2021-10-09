@@ -4,6 +4,7 @@ import '../App.css';
 import axios from 'axios';
 
 
+
 class AddArticles extends Component {
   constructor() {
     super();
@@ -64,13 +65,14 @@ class AddArticles extends Component {
 
   render() {
     return (
-      <div className="AddArticles">
+      
         <div className="container">
-          <div className="row">
+          <div className="table">
 
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Add Articles</h1>
               <p className="lead text-center">
+             
                 Add Required Information About The Artcile
               </p>
 
@@ -181,11 +183,19 @@ class AddArticles extends Component {
                 />
               </form>
             </div>
+
+            <br />
+            <br />
             {/* TODO: msg after submitting */}
-            {this.state.isSubmitted && 'Your Article has been submitted successfully.'}
+                <div className='submitmsg'>
+            {this.state.isSubmitted && `Your Article has been submitted successfully.`}
+  
+         
+              </div>
           </div>
         </div>
-      </div>
+       
+   
     );
   }
 }

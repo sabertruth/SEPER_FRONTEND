@@ -1,6 +1,58 @@
 .App {
   text-align: center;
 }
+body{
+  background-image: url("https://wallpapercave.com/wp/wp2729921.gif");
+}
+
+.submitmsg{
+  text-align: center;
+  margin: auto;
+  width: 50%;
+ font-size: larger;
+ font-weight: bolder;
+  padding: 10px;
+  color: rgb(92, 126, 61);
+}
+.header{
+  text-align: center;
+  margin: auto;
+  width: 50%;
+ 
+
+  padding: 10px;
+  
+}
+/* SOURCE: https://webdevtrick.com/css-text-mask/ */
+.display-4{ 
+  padding: 10px;
+  background: url("https://media.giphy.com/media/4H3Ii5eLChYul9p7NL/giphy.gif");
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  color: #86e20ea1;
+  font-size: 3rem;
+  font-weight: 900;
+ font-family: 'Righteous', cursive;
+  letter-spacing: 1px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+}
+
+.container{
+  
+ 
+  
+}
+.table{
+ border-radius: 2mm;
+/* background-image: url("https://c.tenor.com/6ZUs587t-_YAAAAC/blue-heart-black.gif"); */
+
+}
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

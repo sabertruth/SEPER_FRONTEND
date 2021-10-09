@@ -7,6 +7,7 @@ const Home = (props) => {
   const [search, setSearch] = React.useState();
   const [showSearch, setShowSearch] = React.useState(false);
   const [books, setBooks] = React.useState([]);
+  
   React.useEffect(() => {
     if (search == null) return;
     const url = `http://localhost:8082/api/books/find?author=${search}`;
@@ -23,7 +24,7 @@ const Home = (props) => {
     if (showSearch === false) return;
 
     return (
-      <table className="">
+      <table className="table table-striped table-dark">
         <thead>
           <tr>
             <th scope="col">Title</th>
@@ -54,7 +55,7 @@ const Home = (props) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <input
         className="form-control me-sm-2"
         type="text"
@@ -62,12 +63,13 @@ const Home = (props) => {
         onChange={(s) => setSearch(s.target.value)}
         placeholder="Search An Article"
       />
-
+ {/* <br /> */}
       <button
         className="btn btn-warning my-2 my-sm-0"
         onClick={() => setShowSearch(true)}
-        style={{ float: 'right' }}
+        // style={{ float: 'right' }}
       >
+       
         Search
       </button>
       {renderBooks()}
@@ -96,6 +98,9 @@ const Home = (props) => {
       >
         Show All Available Articles
       </button>
+      <br />
+      <br />
+     
     </div>
   );
 };
